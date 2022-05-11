@@ -28,11 +28,11 @@ class EnsurePostBelongsToUser
         // error_log("\n[+] EnsurePostBelongsToUser: Current User ID = '$currentUserID'");
 
         if ($currentUserID !== $targetPost->author_id) {
-            error_log("\n[-] User does not own the post!!");
+            // error_log("\n[-] User does not own the post!!");
             return back()->with('error', 'You are not the post owner!');
         }
 
-        error_log("\n[+] User owns post. Continuing.");
+        // error_log("\n[+] User owns post. Continuing.");
         return $next($request);
     }
 }
