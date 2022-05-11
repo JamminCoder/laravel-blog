@@ -12,12 +12,9 @@
     <title>@yield('title') - Tim's Blog</title>
 </head>
 <body>
-    <div class="blog-wrapper">       
-        @include('layouts.sidebar')
-
-        <div class="main-content w=100%">
-            @yield('content')
-        </div>
+    @include('layouts.navigation')
+    <div class="blog-wrapper">   
+        @yield('content')
     </div>
 
     <script src="{{ URL::asset('js/app.js') }}"></script>

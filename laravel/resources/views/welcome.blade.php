@@ -4,14 +4,35 @@
 
 @section('content')
 
-<main class="py=4em flex flex-wrap flex-col align=center">
+<section>
+
+    <div class='home-header-section'>
+        <h1 class="home-header">Timothy Batt</h1>
+        <div class='lead flex justify-between align-center'>
+            <h2>Software Developer</h2>
+            <img class='profile-pic' src="{{ URL::asset('images/profile/prof_pic2.jpg') }}" alt="Image of Tim">
+        </div>
+    </div>
     
-    <h1 class="font-header mb=2em px=0.5em">Check out my blog posts!</h1>
+    <section class='home-paragraph'>
+        <h3>What I do</h3>
+        <p>
+            My main focus is backend web development, but
+            I have experience with frontend web dev, creating desktop apps,
+            and writing automation scripts.
+            My primary programming languages are Python, PHP, JavaScript, and Ruby;
+            If needed, I can pick up a new language within a week.
+        </p>
+    </section>
+
+    <h2 class="font-header mb=2em">Check out my blog posts!</h2>
 
     <!-- Load all the blog post previews here -->
-    <div class="posts w=90% flex flex-col align=center">
+    <div class="posts">
         @include('layouts.render-posts', ['posts' => $posts])
     </div>
-</main>
+</section>
+
+
 
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @php
     $title = $post->post_title
@@ -9,8 +9,8 @@
 @section("content")
 
 
-<div class="flex flex-col align=center px=1 mt=4">
-    <section class=" post-content-card">
+<div class="flex flex-col align=center px=1">
+    <section class="post-content-card">
         @if (Auth::check() && Auth::user()->user_id === $post->author_id)
             <div class="modify-post-header flex gap=1em justify=space-between">
                 <a href="{{ route('post.edit', [$post->post_id]); }}" class="">Edit</a>

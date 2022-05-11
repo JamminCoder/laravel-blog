@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway&display=swap');
+
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 html, body {
     min-height: 100%;
-    font-size: 1em;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+body {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
 /* Text */
@@ -21,6 +28,32 @@ p {
     line-height: 1.6;
     max-width: 60ch;
     margin: 0;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+
+.home-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    
+}
+
+.lead {
+    width: 20em;
+    margin: 1em 0;
+}
+
+.home-paragraph {
+    margin: 3em 0;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 5em;
 }
 
 .font-header {
@@ -63,6 +96,14 @@ p {
 .hide {
     display: none;
 }
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
 /*******************************************/
 
 
@@ -99,60 +140,9 @@ p {
 .blog-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 8em;
 }
-
-
-
-
-
-@media (min-width: 50em) {
-    .blog-wrapper {
-        flex-direction: row;
-    }
-
-    .sidebar {
-        width: 20em;
-        min-height: 100vh;
-    }
-
-    .welcome-header {
-        padding: 0 0.5em;
-        text-align: left;
-    }
-
-    .sidebar {
-        position: fixed;
-    }
-
-    .main-content {
-        padding-left: 20em;
-    }
-}
-
-
-/* Profile Pic */
-.profile-pic {
-    width: clamp(7em, 30vw, 10em);
-    height: auto;
-    border-radius: 50%;
-    align-self: center;
-}
-
-.welcome-header {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background-color: rgb(36, 36, 36);
-    gap: 1em;
-}
-
-.welcome-header-text {
-    /* text-align: center; */
-    align-self: center;
-    padding: 2em;
-    padding-top: 1em;
-}
-
 
 
 /***********************************/
@@ -161,12 +151,12 @@ p {
 .card {
     border-radius: 0.5em;
     padding: 1em;
-    background-color: white;
+    background-color: rgb(42, 42, 42);
 }
+
 
 .post-preview {
     max-width: 50em;
-    width: 100%;
     margin-bottom: 2em;
     transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -208,7 +198,8 @@ p {
 
 
 code, pre {
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(49, 49, 49);
+    color: rgb(0, 255, 26);
     font-family: monospace;
     letter-spacing: 0.08em;
     border-radius: 0.2em;
@@ -224,7 +215,7 @@ code {
 pre {
     /* white-space: pre-wrap; */
     padding: 1em;
-    margin: 1em 0;
+    margin: 1.5em 0;
 }
 
 /* Block-like code tags. */
@@ -238,7 +229,7 @@ pre code {
 }
 
 .post-preview:hover {
-    box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0.5em 1em rgba(255, 255, 255, 0.392);
     transform: translateY(-0.1em);
 }
 
@@ -253,15 +244,6 @@ pre code {
         max-width: 50em;
     }
 }
-
-
-.blog-header {
-    padding-top: 2em;
-    background: white;
-    border-radius: 1em;
-    box-shadow: 0px -2px 5px rgba(255, 255, 255, 0.322);
-}
-
 
 .description {
     border-left: 1px solid rgba(0, 0, 0, 0.3);
@@ -315,11 +297,5 @@ textarea {
     background-color: rgb(255, 65, 65);
     transform: translateY(-0.1em);
     box-shadow: 0px 0px 0.5em 0.1em rgb(0, 0, 0, 0.5);
-}
-
-@media (min-width: 1075px) {
-    .profile-header-text {
-        text-align: left;
-    }
 }
 
