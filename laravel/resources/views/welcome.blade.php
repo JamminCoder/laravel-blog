@@ -43,23 +43,8 @@
             and then upload the parsed spreadsheet data to a form at
             <a href='https://courseratingpilot.usga.org/#!/home/coursedetails/'>courseratingpilot.usga.org</a>.
         </p>
-        <h3>Why it's significant</h3>
-        <p>
-            
-            The FSGA collects various stats on golf courses across Florida and stores those stats
-            in a spreadsheet, that spreadsheet then needs to be uploaded to
-            <a href='https://courseratingpilot.usga.org/#!/home/coursedetails/'>courseratingpilot.usga.org</a>.
 
-            Each hole to be rated has 28 stats that need to be submitted, so for an 18
-            hole course, that's 504 individual pieces of data that need to be manually uploaded, not to 
-            mention the stats for up to 4 different tee boxes; so really you could be looking at upwards
-            of 1500 pieces of data to be submitted.
-            That's why they hired me to write them this program: to upload all of the data to its
-            appropriate place in the form online.
-            Right now the code is closed source, I'm waiting on an OK from them for me to make it public
-            so I can show how it works.
-        </p>
-
+        <h4>I will add more projects here as I make them</h4>
     </section>
 
     <h2 class="font-header mb=2em">Check out my blog posts!</h2>
