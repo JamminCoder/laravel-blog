@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 24px;
+}
+
 html, body {
     min-height: 100%;
     margin: 0;
@@ -14,7 +18,22 @@ html, body {
 }
 
 body {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-size: clamp(0.8rem, 1.2vw, 1.25rem);
+}
+
+@media (min-width: 60rem) {
+    body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lead {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1em;
+    }
 }
 
 /* Text */
@@ -47,9 +66,13 @@ a {
     margin: 1em 0;
 }
 
+.lead * {
+    margin-bottom: 1em;
+}
+
 .home-paragraph {
     margin: 3em 0;
-    max-width: 40em;
+    max-width: 50em;
     
 }
 
@@ -76,37 +99,6 @@ a {
 }
 /*********************************************/
 
-
-/********
-    Flex Styles 
-*********/
-
-.flex {
-    display: flex;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
-/* Flex direction */
-
-.flex-col {
-    flex-direction: column;
-}
-
-.hide {
-    display: none;
-}
-
-.align-center {
-    align-items: center;
-}
-
-.justify-between {
-    justify-content: space-between;
-}
-/*******************************************/
 
 
 .navbar {
@@ -140,10 +132,8 @@ a {
 /* Welcome Page */
 
 .blog-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 8em;
+    padding: 0 2em;
 }
 
 
@@ -165,7 +155,7 @@ a {
 
 .post-content-card {
     padding: 2em;
-    width: 100%;
+    max-width: 100%;
     max-width: 50em;
 }
 

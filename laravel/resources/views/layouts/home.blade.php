@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ URL::asset('css/app.css'); }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/flex.css'); }}">
     <link rel="stylesheet" href="{{ URL::asset('css/analog.css'); }}">
     <title>@yield('title') - Tim's Blog</title>
 </head>

@@ -8,7 +8,7 @@
 
     <div class='home-header-section'>
         <h1 class="home-header">Timothy Batt</h1>
-        <div class='lead flex justify-between align-center'>
+        <div class='lead'>
             <h2>Software Developer</h2>
             <img class='profile-pic' src="{{ URL::asset('images/profile/prof_pic2.jpg') }}" alt="Image of Tim">
         </div>
