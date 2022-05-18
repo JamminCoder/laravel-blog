@@ -26,7 +26,7 @@
     </section>
 
     <section class='home-paragraph'>
-        <h2 class='mb-1'>Website I've built</h2>
+        <h2 class='mb-1'>Websites I've built</h2>
         <h3 class='mb-1'>1. This website :)</h3>
         <h3>2. <a href='http://geo.timbattblog.com'>Geography Quiz Website</a>-<a href='https://github.com/Jammin-Coder/geo.timbattblog.com'>(Source)</a></h3>
         <p>
