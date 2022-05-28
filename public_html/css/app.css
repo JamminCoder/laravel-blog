@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    --bg-primary: rgb(30, 30, 30);
+}
+
 html {
     font-size: 24px;
 }
@@ -13,8 +18,10 @@ html, body {
     min-height: 100%;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    background-color: rgb(30, 30, 30);
+    background-color: var(--bg-primary);
     color: white;
+
+    scroll-padding-bottom: 20rem;
 }
 
 body {
@@ -269,6 +276,12 @@ pre code {
 textarea {
     resize: none;
     border: 1px solid black;
+    vertical-align: top;
+
+    color: white;
+    background-color: var(--bg-primary);
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
 }
 
 

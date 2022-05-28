@@ -1,24 +1,36 @@
-// Automatically resize textareas
-// Credit to Stackoverflow user DreamTeK: https://stackoverflow.com/a/25621277/17273033
-try {
-  const tx = document.getElementsByTagName("textarea");
-  for (let i = 0; i < tx.length; i++) {
-    tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
-    tx[i].addEventListener("input", OnInput, false);
-    window.addEventListener('resize', () => {
-      // tx[i].style.height = tx[i].scrollHeight + "px";
-      tx[i].style.height = `calc(auto + ${tx[i].scrollHeight}px`;
+// Auto resizing textarea code from: https://codepen.io/shshaw/pen/azzvBv
+
+(function(){
+  
+  var textareas = document.querySelectorAll('textarea'),
       
-    });
+      resize = function(t) {
+        t.style.height = 'auto';
+        t.style.overflow = 'hidden'; // Ensure scrollbar doesn't interfere with the true height of the text.
+        t.style.height = (t.scrollHeight + t.offset ) + 'px';
+        t.style.overflow = '';
+      },
+      
+      attachResize = function(t) {
+        if ( t ) {
+          t.offset = !window.opera ? (t.offsetHeight - t.clientHeight) : (t.offsetHeight + parseInt(window.getComputedStyle(t, null).getPropertyValue('border-top-width')));
+
+          resize(t);
+
+          if ( t.addEventListener ) {
+            t.addEventListener('input', function() { resize(t); });
+            t.addEventListener('mouseup', function() { resize(t); }); // set height after user resize
+          }
+
+          t['attachEvent'] && t.attachEvent('onkeyup', function() { resize(t); });
+        }
+      };
+  
+  for (var i = 0; i < textareas.length; i++ ) {
+    attachResize(textareas[i]);
   }
-} catch (e){};
-
-
-function OnInput() {
-  this.style.height = tx[i].style.height = `calc(auto + ${tx[i].scrollHeight}px)`;
-  // this.style.height = "auto";
- 
-}
+  
+})();
 
 function confirmDelete()
 {
