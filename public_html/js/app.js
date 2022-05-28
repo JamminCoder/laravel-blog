@@ -6,17 +6,18 @@ try {
     tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
     tx[i].addEventListener("input", OnInput, false);
     window.addEventListener('resize', () => {
-      tx[i].style.height = "auto";
-      console.log(tx[i].style.height);
-      tx[i].style.height = (tx[i].scrollHeight) + "px";
+      // tx[i].style.height = tx[i].scrollHeight + "px";
+      tx[i].style.height = `calc(auto + ${tx[i].scrollHeight}px`;
+      
     });
   }
 } catch (e){};
 
 
 function OnInput() {
-  this.style.height = "auto";
-  this.style.height = (this.scrollHeight) + "px";
+  this.style.height = tx[i].style.height = `calc(auto + ${tx[i].scrollHeight}px)`;
+  // this.style.height = "auto";
+ 
 }
 
 function confirmDelete()

@@ -50,8 +50,8 @@ p {
 }
 
 a {
-    color: rgb(83, 80, 255);
-    font-weight: bold;
+    color: rgb(95, 204, 122);
+    /* font-weight: bold; */
 }
 
 
@@ -71,9 +71,20 @@ a {
 }
 
 .home-paragraph {
-    margin: 3em 0;
+    margin: 2rem 0 3rem 0;
     max-width: 50em;
-    
+}
+
+.home-paragraph:after {
+    content: '';
+    display: block;
+    height: 1px;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-paragraph__header {
+    margin-bottom: 1rem;
 }
 
 .profile-pic {
