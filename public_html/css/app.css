@@ -216,6 +216,7 @@ code, pre {
     border-radius: 0.2em;
     max-width: 100%;
     overflow-x: auto;
+    line-height: 1.5;
 }
 
 /* Inline code tags */
