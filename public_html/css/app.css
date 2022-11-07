@@ -236,30 +236,6 @@ pre code {
     margin: 1em 0;
 }
 
-.post-preview:hover {
-    box-shadow: 0px 0.5em 1em rgba(255, 255, 255, 0.392);
-    transform: translateY(-0.1em);
-}
-
-@media (min-width: 41em) {
-    .post-preview{
-        max-width: 40em;
-    }
-}
-
-@media (min-width: 50em) {
-    .post-content {
-        max-width: 50em;
-    }
-}
-
-.description {
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    padding-left: 0.5em;
-}
-
-
 .one-line-input {
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);

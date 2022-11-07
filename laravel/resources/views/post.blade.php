@@ -7,9 +7,6 @@
 @section("title", $title)
 
 @section("content")
-
-
-
 <section class="post-content-card">
     @if (Auth::check() && Auth::user()->user_id === $post->author_id)
         <div class="modify-post-header flex gap=1em justify=space-between">
@@ -26,13 +23,6 @@
             </form>
         </div>
     @endif
-
-    <!-- <div class="gap=1em mb=3em">
-        <h1 class="post-header">{{ $post->post_title }}</h1>
-        <small class="post-description text=center">
-            {{ $post->post_description }}
-        </small>
-    </div> -->
     
     <article class="post-content">
         {{ Illuminate\Mail\Markdown::parse(htmlspecialchars($post->content)) }}
@@ -41,6 +31,5 @@
 
 <script src="{{ URL::asset('js/app.js'); }}"></script>
 <script src="{{ URL::asset('js/code_handler.js'); }}"></script>
-
 
 @endsection
