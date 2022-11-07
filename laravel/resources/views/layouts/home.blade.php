@@ -7,7 +7,6 @@
      I made this blog to showcase some of the web development skills I picked up, as well as to host website redesigns for my resume.">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="{{ URL::asset('css/flex.css'); }}">
     <link rel="stylesheet" href="{{ URL::asset('css/tailwind.css'); }}">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css'); }}">
     <title>@yield('title') - Tim's Blog</title>
