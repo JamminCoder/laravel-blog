@@ -1,16 +1,16 @@
 @foreach($posts as $post)
-    <section class="post-preview card shadow" onclick='location.href="post/{{ $post->post_id }}"'>
-        <div class="post-preview-header mb=1em">
+    <section class="max-w-[35em] mb-5 card shadow hover:-translate-y-[.1em] transition-all" onclick='location.href="post/{{ $post->post_id }}"'>
+        <div class="mb-4">
             <div class="font-header post-preview-title">
-                <h2>{{ $post->post_title }}</h2>
+                <h2 class="font-semibold text-2xl flex items-center">{{ $post->post_title }}</h2>
             </div>
-            <small class="font-description description mt=0.7em">
+            <p class="text-sm pl-1 border-l border-gray-400">
                 {{ $post->created_at }}
-            </small>
+            </p>
         </div>
         
-        <div class="post-preview-body">
+        <p class="text-sm">
             {{ $post->post_description }}
-        </div>
+        </p>
     </section>
 @endforeach

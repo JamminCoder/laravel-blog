@@ -52,7 +52,7 @@
         <h4>I will add more projects here as I make them</h4>
     </section>
 
-    <h2 class="font-header mb=2em">Check out my blog posts!</h2>
+    <h2 class="text-3xl mb-8">Check out my blog posts!</h2>
 
     <!-- Load all the blog post previews here -->
     <div class="posts">

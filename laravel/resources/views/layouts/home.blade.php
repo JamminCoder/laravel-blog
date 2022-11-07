@@ -9,7 +9,6 @@
     
     <link rel="stylesheet" href="{{ URL::asset('css/app.css'); }}">
     <link rel="stylesheet" href="{{ URL::asset('css/flex.css'); }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/analog.css'); }}">
     <link rel="stylesheet" href="{{ URL::asset('css/tailwind.css'); }}">
     <title>@yield('title') - Tim's Blog</title>
 </head>
