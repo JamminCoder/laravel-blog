@@ -33,13 +33,14 @@ class PostController extends Controller
         $request->validate([
             'post_title' => ['string', 'required'],
             'post_description' => ['string', 'required'],
+            'post_content' => ['string', 'required']
         ]);
 
         $post = new PostModel([
             'post_id' => $this->generatePostID(),
             'post_title' => $request->post_title,
             'post_description' => $request->post_description,
-            'content' => "# {$request->post_title}\n#### {$request->post_description}",
+            'content' => $request->post_content,
             'author_id' => Auth::user()->user_id
         ]);
 
