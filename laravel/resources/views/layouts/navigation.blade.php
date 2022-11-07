@@ -7,9 +7,6 @@
                 onclick="event.preventDefault(); 
                 this.closest('form').submit();">Logout</a>
         </form>
-        
-    @else
-        <a class="nav-link" href="{{ route('login'); }}">Login</a>
     @endif
 
     <a class="nav-link" href="{{ route('home'); }}">Home</a>
