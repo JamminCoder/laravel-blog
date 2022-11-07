@@ -8,9 +8,15 @@
 
     <div class='home-header-section'>
         <h1 class="home-header">Timothy Batt</h1>
-        <div class='lead'>
-            <h2>Software Developer</h2>
-            <img class='profile-pic' src="{{ URL::asset('images/profile/prof_pic2.jpg') }}" alt="Image of Tim">
+        <p class="text-xl mb-8">Fullstack Developer</p>
+
+        <div class="text-sm">
+            <p>Contact Me:</p>
+            <div class="flex gap-4">
+                <a class="text-sky-400" href="tel:716-229-1732">716-229-1732</a>
+                <a class="text-sky-400" href="https://twitter.com/JamminCoder">Twitter</a>
+                <a class="text-sky-400" href="mailto:jammincoderguy96@gmail.com">Email</a>
+            </div>
         </div>
     </div>
     
