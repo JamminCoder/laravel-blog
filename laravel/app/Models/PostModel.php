@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class PostModel extends Model
 {
@@ -64,5 +65,20 @@ class PostModel extends Model
         
         // The ID is unique.
         return true;
+    }
+
+    public static function generateSlug($title) {
+        $exploded = explode(" ", $title);
+        $slug = "";
+        foreach ($exploded as $piece) {
+            if ($piece === "") return;
+
+            $slug .= strtolower($piece) . "_";
+        }
+        
+        $time = Carbon::now()->toDateString();
+        $slug .= $time;
+
+        return $slug;
     }
 }

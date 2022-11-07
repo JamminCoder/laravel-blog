@@ -37,7 +37,7 @@ class PostController extends Controller
         ]);
 
         $post = new PostModel([
-            'post_id' => $this->generatePostID(),
+            'post_id' => PostModel::generateSlug($request->post_title),
             'post_title' => $request->post_title,
             'post_description' => $request->post_description,
             'content' => $request->post_content,
@@ -61,7 +61,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect("/edit-post/$post->post_id");
+        return redirect("/post/$post->post_id");
     }
 
     public function edit(Request $request, $postID)
