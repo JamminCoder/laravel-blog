@@ -161,13 +161,6 @@ a {
     background-color: rgb(42, 42, 42);
 }
 
-
-.post-preview {
-    max-width: 50em;
-    margin-bottom: 2em;
-    transition: box-shadow 0.2s, transform 0.2s;
-}
-
 .post-content-card {
     padding: 2em;
     max-width: 100%;
