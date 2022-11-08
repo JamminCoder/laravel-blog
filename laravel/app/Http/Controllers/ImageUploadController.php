@@ -43,7 +43,6 @@ class ImageUploadController extends Controller
         $post = PostModel::firstWhere("post_id", $parameterArray['post_id']);
 
         $imageModel = new ImageModel([
-            'belongs_to_post_id' => $parameterArray['post_id'],
             'url' => $imageUrl,
             'server_path' => $path,
         ]);
@@ -67,15 +66,14 @@ class ImageUploadController extends Controller
         $imageUrls = $matches[1];
 
         // Get the images that this post stores in the database (does not get remote images)
-        $postImages = ImageModel::getPostsImages($request->post_id);
+        $postImages = PostModel::firstWhere("post_id", $request->post_id)->images()->get();
 
         // Delete unused images from this post in the database and file system
-        foreach($postImages as $row)
+        foreach($postImages as $image)
         {
-            if (!in_array($row->url, $imageUrls))
+            if (!in_array($image->url, $imageUrls))
             {
-                ImageModel::deleteByURL($row->url, $request->post_id);
-                Storage::disk('my_files')->delete($row->server_path);
+                $image->delete();
             }
         }
     }

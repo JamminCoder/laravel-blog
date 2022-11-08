@@ -37,7 +37,7 @@ function dropHandler(ev) {
 
 				reader.onloadend = () => {
 					uploadImage(
-						'https://timbattblog.com/image/upload', 
+						'/image/upload', 
 						reader.result,
 						file.name,
 						'application/url-encoded'
@@ -67,7 +67,7 @@ function buttonUploadHandler()
 	reader.readAsBinaryString(img);
 
 	reader.onloadend = () => uploadImage(
-		'https://timbattblog.com/image/upload', 
+		'/image/upload', 
 		reader.result,
 		img.name,
 		'application/url-encoded'

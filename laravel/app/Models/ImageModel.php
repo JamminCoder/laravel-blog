@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PostModel;
+use Illuminate\Support\Facades\Storage;
 
 class ImageModel extends Model
 {
@@ -38,5 +39,10 @@ class ImageModel extends Model
             'url' => $url,
             'post_id' => $postID
         ]);
+    }
+
+    public function delete() {
+        Storage::disk('my_files')->delete($this->server_path);
+        return parent::delete();
     }
 }
