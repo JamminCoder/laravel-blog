@@ -92,4 +92,14 @@ class PostModel extends Model
             ["is_published" => true]
         );
     }
+
+    public function delete() {
+        $images = $this->images()->get();
+        
+        foreach ($images as $image) {
+            $image->delete();
+        }
+
+        return parent::delete();
+    }
 }
