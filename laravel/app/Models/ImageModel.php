@@ -22,25 +22,6 @@ class ImageModel extends Model
         return $this->belongsTo(PostModel::class);
     }
 
-    public static function getPostsImages($postID)
-    {
-        return DB::select(
-            "SELECT * FROM images WHERE belongs_to_post_id = (:post_id);",
-            [
-                'post_id' => $postID
-            ]
-        );
-    }
-
-    public static function deleteByURL($url, $postID)
-    {
-        DB::delete("DELETE FROM images WHERE url = (:url) AND belongs_to_post_id = (:post_id);", 
-        [
-            'url' => $url,
-            'post_id' => $postID
-        ]);
-    }
-
     public function delete() {
         Storage::disk('my_files')->delete($this->server_path);
         return parent::delete();
