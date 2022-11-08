@@ -52,17 +52,18 @@ class PostModel extends Model
 
     public static function deletePostByID($postID)
     {
-        DB::delete('DELETE FROM posts WHERE post_id = (:post_id);', ['post_id' => $postID]);
+        self::firstWhere("post_id", $postID)->delete();
     }
 
     public static function loadPostPreviews()
     {
-        return DB::select('SELECT * FROM posts ORDER BY created_at DESC');
+        $posts = DB::table("posts")->orderBy("created_at", "desc")->get();
+        return $posts;
     }
 
     public static function idIsUnique($id)
     {
-        $matchedIDs = DB::table('posts')->where('post_id', $id)->first();
+        $matchedIDs = self::firstWhere('post_id', $id);
         
         // ID is not unique
         if ($matchedIDs) return false;
