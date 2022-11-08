@@ -7,13 +7,20 @@ use App\Http\Controllers\ImageUploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Mail\Markdown;
+
 
 class PostController extends Controller
 {
     public function create()
     {
-        return view("create-post");
+        $post = PostModel::getAuthorsUnpublishedPost(Auth::user()->author_id);
+        if (!$post) {
+            $post = new PostModel();
+            $post->post_id = self::generatePostID();
+            $post->save();
+        }
+        
+        return view("create-post", ["post" => $post]);
     }
 
     public function display(Request $request, $postID)
@@ -33,16 +40,17 @@ class PostController extends Controller
         $request->validate([
             'post_title' => ['string', 'required'],
             'post_description' => ['string', 'required'],
-            'post_content' => ['string', 'required']
+            'post_content' => ['string', 'required'],
+            'post_id' => ['string', 'required']
         ]);
 
-        $post = new PostModel([
-            'post_id' => PostModel::generateSlug($request->post_title),
-            'post_title' => $request->post_title,
-            'post_description' => $request->post_description,
-            'content' => $request->post_content,
-            'author_id' => Auth::user()->user_id
-        ]);
+        $post = PostModel::firstWhere("post_id", $request->post_id);
+
+        $post->post_id = PostModel::generateSlug($request->post_title);
+        $post->post_title = $request->post_title;
+        $post->post_description = $request->post_description;
+        $post->content = $request->post_content;
+        $post->author_id = Auth::user()->user_id;
 
         if ($request->hasFile('header_image')) {
             $request->validate([
@@ -57,7 +65,7 @@ class PostController extends Controller
             $post->header_image_url = $path;
         }
         
-        $post->is_published = 0;
+        $post->is_published = true;
 
         $post->save();
 

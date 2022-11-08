@@ -7,6 +7,7 @@
 <div class="flex flex-col items-center">
 <form id="markdown_form" action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data" class="flex flex-col align=center">
         @csrf
+        <input type="hidden" value="{{ $post->post_id }}" name="post_id"/>
         <div class="flex items-center flex-col gap-4 mb-12">
             <label for="post_title">Post Title</label>    
             <input type="text" name="post_title" id="post_title" class="text-black one-line-input font-bold text-2xl text-center" placeholder="Title">

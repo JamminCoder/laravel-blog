@@ -81,4 +81,11 @@ class PostModel extends Model
 
         return $slug;
     }
+
+    public static function getAuthorsUnpublishedPost($author_id) {
+        return self::firstWhere(
+            ["author_id" => $author_id],
+            ["is_published" => true]
+        );
+    }
 }
