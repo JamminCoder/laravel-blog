@@ -4,6 +4,7 @@ namespace App\Models;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\PostModel;
 
 class ImageModel extends Model
 {
@@ -15,6 +16,10 @@ class ImageModel extends Model
         'url',
         'server_path',
     ];
+
+    public function post() {
+        return $this->belongsTo(PostModel::class);
+    }
 
     public static function getPostsImages($postID)
     {

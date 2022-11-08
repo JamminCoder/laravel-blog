@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use App\Models\ImageModel;
 
 class PostModel extends Model
 {
@@ -20,6 +21,9 @@ class PostModel extends Model
         'author_id'
     ];
 
+    public function images() {
+        return $this->hasMany(ImageModel::class);
+    }
 
     public static function getPostByID($postID)
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ImageModel;
+use App\Models\PostModel;
 use Error;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -39,17 +40,19 @@ class ImageUploadController extends Controller
         $path = 'images/resource/' . date('mdy') . '-' . uniqid();
         $imageUrl = URL::to($path);
 
+        $post = PostModel::firstWhere("post_id", $parameterArray['post_id']);
+
         $imageModel = new ImageModel([
             'belongs_to_post_id' => $parameterArray['post_id'],
             'url' => $imageUrl,
             'server_path' => $path,
         ]);
-        
 
+        
         // Save the image
         Storage::disk('my_files')->put($path, $image);
         
-        $imageModel->save();
+        $post->images()->save($imageModel);
 
         return response('Image Uploaded Successfuly!', 200, array('url' => $imageUrl));
     

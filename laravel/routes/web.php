@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\PostModel;
 use GuzzleHttp\Psr7\Request;
 
 /*
@@ -50,6 +51,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+Route::get('/post/{post_id}/images', function ($post_id) {
+    return PostModel::firstWhere("post_id", $post_id)->images()->get();
+});
 
 require __DIR__.'/auth.php';
 require __DIR__.'/api.php';
