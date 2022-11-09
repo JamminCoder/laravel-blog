@@ -27,7 +27,13 @@ Route::get('/gallery', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts', ['posts' => PostModel::all()]);
+    return view(
+        'posts', 
+        [
+            'posts' => PostModel::where("is_published", true)
+            ->orderBy("created_at", "desc")->get()
+        ]
+    );
 });
 
 Route::get('/post/{id}', [PostController::class, 'display'])->name('post.display');
