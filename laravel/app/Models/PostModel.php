@@ -27,27 +27,19 @@ class PostModel extends Model
 
     public static function getPostByID($postID)
     {
-        return DB::table('posts')->where('post_id', $postID)->first();
+        return self::firstWhere('post_id', $postID);
     }
 
     public static function updatePost($newContent, $newTitle, $newDescription, $postID)
     {
-        // Deletes post_content from the database
-        DB::update(
-            "UPDATE posts
-            SET 
-            content = (:new_content),
-            post_title = (:new_title),
-            post_description = (:new_description)
-            WHERE post_id = (:post_id);",
+        $post = self::firstWhere("post_id", $postID);
 
-            [
-                'new_content' => $newContent,
-                'new_title' => $newTitle,
-                'new_description' => $newDescription,
-                'post_id' => $postID,
-            ]
-        );
+        $post->content = $newContent;
+        $post->post_title = $newTitle;
+        $post->post_description = $newDescription;
+        $post->post_id = $postID;
+
+        $post->update();
     }
 
     public static function deletePostByID($postID)
@@ -57,7 +49,10 @@ class PostModel extends Model
 
     public static function loadPostPreviews()
     {
-        $posts = DB::table("posts")->orderBy("created_at", "desc")->get();
+        $posts = DB::table("posts")
+                ->where("is_published", true)
+                ->orderBy("created_at", "desc")->get();
+
         return $posts;
     }
 
