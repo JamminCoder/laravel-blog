@@ -81,10 +81,10 @@ class PostController extends Controller
     public function updatePost(Request $request)
     {
         $request->validate([
-                'content' => ['string', 'required'],
-                'post_title',
-                'post_description',
-                'post_id' => ['string', 'max:255', 'required']
+            'content' => ['string', 'required'],
+            'post_title',
+            'post_description',
+            'post_id' => ['string', 'max:255', 'required']
         ]);
 
         $postID = $request->post_id;
