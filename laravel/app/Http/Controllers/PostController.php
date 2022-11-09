@@ -17,6 +17,7 @@ class PostController extends Controller
         if (!$post) {
             $post = new PostModel();
             $post->post_id = self::generatePostID();
+            $post->author_id = Auth::user()->user_id;
             $post->save();
         }
         
