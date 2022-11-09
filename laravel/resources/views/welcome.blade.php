@@ -14,56 +14,39 @@
             <p>Contact Me:</p>
             <div class="flex gap-4">
                 <a class="text-sky-400" href="tel:716-229-1732">716-229-1732</a>
-                <a class="text-sky-400" href="https://twitter.com/JamminCoder">Twitter</a>
-                <a class="text-sky-400" href="mailto:jammincoderguy96@gmail.com">Email</a>
+                <a class="text-sky-400" href="https://twitter.com/JamminCoder">https://twitter.com/JamminCoder</a>
+                <a class="text-sky-400" href="mailto:jammincoderguy96@gmail.com">jammincoderguy96@gmail.com</a>
             </div>
         </div>
     </div>
     
-    <section class='home-paragraph'>
-        <h2 class='home-paragraph__header'>What I do</h2>
-        <p>
-            My main focus is backend web development, but
-            I have experience with frontend web dev, creating desktop apps,
-            and writing automation scripts.
-            My primary programming languages are Python, PHP, JavaScript, and Ruby;
-            If needed, I can pick up a new language within a few days.
-        </p>
-    </section>
-
-    <section class='home-paragraph'>
-        <h2 class='home-paragraph__header'>Websites I've built</h2>
-        <h3 class='mb-1'>1. This website</h3>
-        <h3>2. <a href='http://geo.timbattblog.com'>Geography Quiz Website</a> - <a href='https://github.com/Jammin-Coder/geo.timbattblog.com'>(Source)</a></h3>
-        <p>
-            This is a simple website that quizzes you on the names of different countries.
-        </p>
-    </section>
-
-    <section class='home-paragraph'>
-        <h2 class='home-paragraph__header'>Cool Designs I've made</h2>
-        <h3>1. <a href="https://codepen.io/JamminCoder/pen/WNMXgzg">Landing Page with Skewed Background</a></h3>
-    </section>
-
-    <section class='home-paragraph'>
-        <h2 class='home-paragraph__header'>Notable apps I've made</h2>
-        <h3 class="mb-1">Automatic Spreadsheet Upload Program</h3>
-        <p class='mb-1'>
-            This is a program I made for the FSGA (Florida State Golf Association).
-            It uses Python with the Pandas and Selenium frameworks to parse data from spreadsheets,
-            and then upload the parsed spreadsheet data to a form at
-            <a href='https://courseratingpilot.usga.org/#!/home/coursedetails/'>courseratingpilot.usga.org</a>.
+    <section class='py-4 mt-8 mb-12'>
+        <h2 class='text-2xl font-semibold'>What I do</h2>
+        <p class="mb-6">
+            I'm a fullstack developer currently looking for opportunities to help
+            businesses develop and/or improve their websites, as well as work on solutions to
+            help them make their business more efficient with software.
         </p>
 
-        <h4>I will add more projects here as I make them</h4>
+        <!-- Info seciton -->
+        <div class="flex justify-around gap-4 border-y border-y-gray-700 py-4 px-2 font-thin">
+            <a class="border-b" href="/skills">My Skills</a>
+            <a class="border-b" href="/gallery">Work Gallery</a>
+            <a class="border-b" href="/posts">Blog Posts</a>
+        </div>
     </section>
 
-    <h2 class="text-3xl mb-8">Check out my blog posts!</h2>
+    
 
-    <!-- Load all the blog post previews here -->
-    <div class="posts">
-        @include('layouts.render-posts', ['posts' => $posts])
-    </div>
+    @if (count($posts) >= 1)
+        <h2 class="text-3xl mb-8 font-semibold">Blog Posts.</h2>
+
+        <!-- Load all the blog post previews here -->
+        <div class="posts">
+            @include('layouts.render-posts', ['posts' => $posts])
+        </div>
+    @endif
+    
 </section>
 
 

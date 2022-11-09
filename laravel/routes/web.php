@@ -18,6 +18,18 @@ use GuzzleHttp\Psr7\Request;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
+Route::get('/skills', function () {
+    return view('skills');
+});
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
+Route::get('/posts', function () {
+    return view('posts', ['posts' => PostModel::all()]);
+});
+
 Route::get('/post/{id}', [PostController::class, 'display'])->name('post.display');
 
 /**
@@ -50,10 +62,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-Route::get('/post/{post_id}/images', function ($post_id) {
-    return PostModel::firstWhere("post_id", $post_id)->images()->get();
-});
 
 require __DIR__.'/auth.php';
 require __DIR__.'/api.php';
