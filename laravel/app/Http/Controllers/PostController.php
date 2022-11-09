@@ -101,7 +101,7 @@ class PostController extends Controller
 
     public function delete($postID)
     {
-        PostModel::firstWhere("post_id", $postID)->delete();
+        PostModel::getPostByID($postID)->delete();
         return redirect('/');
     }
 

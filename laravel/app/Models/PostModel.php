@@ -42,11 +42,6 @@ class PostModel extends Model
         $post->update();
     }
 
-    public static function deletePostByID($postID)
-    {
-        self::firstWhere("post_id", $postID)->delete();
-    }
-
     public static function loadPostPreviews()
     {
         $posts = DB::table("posts")
