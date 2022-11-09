@@ -78,10 +78,10 @@ class PostModel extends Model
     }
 
     public static function getAuthorsUnpublishedPost($author_id) {
-        return self::firstWhere(
-            ["author_id" => $author_id],
-            ["is_published" => false]
-        );
+        return DB::table("posts")
+                ->where("author_id", $author_id)
+                ->where("is_published", false)
+                ->first();
     }
 
     public function delete() {
