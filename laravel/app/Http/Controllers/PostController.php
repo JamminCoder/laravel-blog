@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function create()
     {
-        $post = PostModel::getAuthorsUnpublishedPost(Auth::user()->author_id);
+        $post = PostModel::getAuthorsUnpublishedPost(Auth::user()->user_id);
         if (!$post) {
             $post = new PostModel();
             $post->post_id = self::generatePostID();

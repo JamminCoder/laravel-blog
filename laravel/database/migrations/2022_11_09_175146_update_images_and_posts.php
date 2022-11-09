@@ -4,7 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ModifyImagesTable extends Migration
+use App\Models\PostModel;
+
+class UpdateImagesAndPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +15,15 @@ class ModifyImagesTable extends Migration
      */
     public function up()
     {
-        Schema::table("images", function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
+            $table->boolean("is_published")->nullable()->default(true);
+        });
+
+
+        Schema::table('images', function (Blueprint $table) {
+            $table->foreignIdFor(PostModel::class);
             $table->dropColumn("belongs_to_post_id");
+            $table->id();
         });
     }
 
@@ -27,6 +36,8 @@ class ModifyImagesTable extends Migration
     {
         Schema::table("images", function (Blueprint $table) {
             $table->string("url");
+            $table->dropColumn("id");
+            $table->foreignIdFor(null);
         });
     }
 }
