@@ -12,7 +12,7 @@
 
         <div class="text-sm">
             <p>Contact Me:</p>
-            <div class="flex gap-4">
+            <div class="flex flex-wrap gap-4">
                 <a class="text-sky-400" href="tel:716-229-1732">716-229-1732</a>
                 <a class="text-sky-400" href="https://twitter.com/JamminCoder">https://twitter.com/JamminCoder</a>
                 <a class="text-sky-400" href="mailto:jammincoderguy96@gmail.com">jammincoderguy96@gmail.com</a>
@@ -29,7 +29,7 @@
         </p>
 
         <!-- Info seciton -->
-        <div class="flex flex-wrap justify-around gap-4 border-y border-y-gray-700 py-4 px-2 font-thin">
+        <div class="flex justify-around gap-4 border-y border-y-gray-700 py-4 px-2 font-thin">
             <a class="border-b" href="/skills">My Skills</a>
             <a class="border-b" href="/gallery">Work Gallery</a>
             <a class="border-b" href="/posts">Blog Posts</a>
