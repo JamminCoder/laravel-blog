@@ -29,7 +29,7 @@
         </p>
 
         <!-- Info seciton -->
-        <div class="flex justify-around gap-4 border-y border-y-gray-700 py-4 px-2 font-thin">
+        <div class="flex flex-wrap justify-around gap-4 border-y border-y-gray-700 py-4 px-2 font-thin">
             <a class="border-b" href="/skills">My Skills</a>
             <a class="border-b" href="/gallery">Work Gallery</a>
             <a class="border-b" href="/posts">Blog Posts</a>
