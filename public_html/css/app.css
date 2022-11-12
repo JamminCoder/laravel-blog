@@ -8,6 +8,7 @@
 
 :root {
     --bg-primary: rgb(30, 30, 30);
+    --bg-card: rgb(42, 42, 42);
     --clr-primary: rgb(228, 228, 228);
 }
 
@@ -141,7 +142,7 @@ p {
 .card {
     border-radius: 0.5em;
     padding: 1em;
-    background-color: rgb(42, 42, 42);
+    background-color: var(--bg-card);
 }
 
 .post-content-card {
@@ -218,6 +219,7 @@ pre code {
 }
 
 .one-line-input {
+    background-color: var(--bg-card);
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     height: 2em;
