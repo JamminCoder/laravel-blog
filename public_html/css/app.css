@@ -231,10 +231,7 @@ pre code {
 }
 
 textarea {
-    resize: none;
     border: 1px solid black;
-    vertical-align: top;
-
     color: var(--clr-primary);
     background-color: var(--bg-primary);
     border-radius: 0.2rem;
