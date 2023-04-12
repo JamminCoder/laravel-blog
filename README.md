@@ -1,3 +1,2 @@
-# timbattblog.com 
-My first Laravel project.  
+# Laravel Blogging App
 
